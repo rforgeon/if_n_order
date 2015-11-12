@@ -1,69 +1,44 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Delivery -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Delivery %></h1>
+</div>
 
-<p>
-  <strong>First name:</strong>
-  <%= @delivery.first_name %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:first_name) %></dt>
+      <dd><pre class="prettyprint"><%= @delivery.first_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:last_name) %></dt>
+      <dd><pre class="prettyprint"><%= @delivery.last_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:address_line1) %></dt>
+      <dd><pre class="prettyprint"><%= @delivery.address_line1 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:address_line2) %></dt>
+      <dd><pre class="prettyprint"><%= @delivery.address_line2 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:zip_code) %></dt>
+      <dd><pre class="prettyprint"><%= @delivery.zip_code %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:city) %></dt>
+      <dd><pre class="prettyprint"><%= @delivery.city %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:state) %></dt>
+      <dd><pre class="prettyprint"><%= @delivery.state %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:country) %></dt>
+      <dd><pre class="prettyprint"><%= @delivery.country %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:phone_number) %></dt>
+      <dd><pre class="prettyprint"><%= @delivery.phone_number %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:amazon_email) %></dt>
+      <dd><pre class="prettyprint"><%= @delivery.amazon_email %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:amazon_password) %></dt>
+      <dd><pre class="prettyprint"><%= @delivery.amazon_password %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @delivery.last_name %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              deliveries_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_delivery_path(@delivery), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              delivery_path(@delivery),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Address line1:</strong>
-  <%= @delivery.address_line1 %>
-</p>
-
-<p>
-  <strong>Address line2:</strong>
-  <%= @delivery.address_line2 %>
-</p>
-
-<p>
-  <strong>Zip code:</strong>
-  <%= @delivery.zip_code %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @delivery.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @delivery.state %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @delivery.country %>
-</p>
-
-<p>
-  <strong>Phone number:</strong>
-  <%= @delivery.phone_number %>
-</p>
-
-<p>
-  <strong>Amazon email:</strong>
-  <%= @delivery.amazon_email %>
-</p>
-
-<p>
-  <strong>Amazon password:</strong>
-  <%= @delivery.amazon_password %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @delivery.user %>
-</p>
-
-<p>
-  <strong>Condition:</strong>
-  <%= @delivery.condition %>
-</p>
-
-<%= link_to 'Edit', edit_delivery_path(@delivery) %> |
-<%= link_to 'Back', deliveries_path %>
