@@ -29,6 +29,7 @@ class ConditionsController < ApplicationController
   # POST /conditions.json
   def create
     @condition = Condition.new(condition_params)
+    @condition.user = current_user
 
     respond_to do |format|
       if @condition.save
