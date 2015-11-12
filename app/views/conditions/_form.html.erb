@@ -1,41 +1,40 @@
-<%= form_for(@condition) do |f| %>
-  <% if @condition.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@condition.errors.count, "error") %> prohibited this condition from being saved:</h2>
-
-      <ul>
-      <% @condition.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @condition, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :name, :class => 'text-field form-control' %>
     </div>
-  <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :item, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :item, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :key, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :key, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :order_count, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :order_count, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :cur_count, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :cur_count, :class => 'text-field form-control' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :item %><br>
-    <%= f.text_field :item %>
-  </div>
-  <div class="field">
-    <%= f.label :key %><br>
-    <%= f.text_field :key %>
-  </div>
-  <div class="field">
-    <%= f.label :order_count %><br>
-    <%= f.number_field :order_count %>
-  </div>
-  <div class="field">
-    <%= f.label :cur_count %><br>
-    <%= f.number_field :cur_count %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  conditions_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
