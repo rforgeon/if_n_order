@@ -1,0 +1,55 @@
+<h1>Listing accounts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name on card</th>
+      <th>Card number</th>
+      <th>Security code</th>
+      <th>Expiration month</th>
+      <th>Expiration year</th>
+      <th>Billing first name</th>
+      <th>Billing last name</th>
+      <th>Address line1</th>
+      <th>Address line2</th>
+      <th>Zip code</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Country</th>
+      <th>Phone number</th>
+      <th>User</th>
+      <th>Condition</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accounts.each do |account| %>
+      <tr>
+        <td><%= account.name_on_card %></td>
+        <td><%= account.card_number %></td>
+        <td><%= account.security_code %></td>
+        <td><%= account.expiration_month %></td>
+        <td><%= account.expiration_year %></td>
+        <td><%= account.billing_first_name %></td>
+        <td><%= account.billing_last_name %></td>
+        <td><%= account.address_line1 %></td>
+        <td><%= account.address_line2 %></td>
+        <td><%= account.zip_code %></td>
+        <td><%= account.city %></td>
+        <td><%= account.state %></td>
+        <td><%= account.country %></td>
+        <td><%= account.phone_number %></td>
+        <td><%= account.user %></td>
+        <td><%= account.condition %></td>
+        <td><%= link_to 'Show', account %></td>
+        <td><%= link_to 'Edit', edit_account_path(account) %></td>
+        <td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Account', new_account_path %>

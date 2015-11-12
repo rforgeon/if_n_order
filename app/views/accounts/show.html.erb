@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name on card:</strong>
+  <%= @account.name_on_card %>
+</p>
+
+<p>
+  <strong>Card number:</strong>
+  <%= @account.card_number %>
+</p>
+
+<p>
+  <strong>Security code:</strong>
+  <%= @account.security_code %>
+</p>
+
+<p>
+  <strong>Expiration month:</strong>
+  <%= @account.expiration_month %>
+</p>
+
+<p>
+  <strong>Expiration year:</strong>
+  <%= @account.expiration_year %>
+</p>
+
+<p>
+  <strong>Billing first name:</strong>
+  <%= @account.billing_first_name %>
+</p>
+
+<p>
+  <strong>Billing last name:</strong>
+  <%= @account.billing_last_name %>
+</p>
+
+<p>
+  <strong>Address line1:</strong>
+  <%= @account.address_line1 %>
+</p>
+
+<p>
+  <strong>Address line2:</strong>
+  <%= @account.address_line2 %>
+</p>
+
+<p>
+  <strong>Zip code:</strong>
+  <%= @account.zip_code %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @account.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @account.state %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @account.country %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @account.phone_number %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @account.user %>
+</p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @account.condition %>
+</p>
+
+<%= link_to 'Edit', edit_account_path(@account) %> |
+<%= link_to 'Back', accounts_path %>
