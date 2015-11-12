@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  item: MyString
+  key: MyString
+  order_count: 1
+  cur_count: 1
+  user_id: 
+
+two:
+  name: MyString
+  item: MyString
+  key: MyString
+  order_count: 1
+  cur_count: 1
+  user_id: 
