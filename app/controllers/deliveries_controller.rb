@@ -29,6 +29,7 @@ class DeliveriesController < ApplicationController
   # POST /deliveries.json
   def create
     @delivery = Delivery.new(delivery_params)
+    @delivery.user = current_user
 
     respond_to do |format|
       if @delivery.save
