@@ -1,0 +1,49 @@
+<h1>Listing deliveries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Address line1</th>
+      <th>Address line2</th>
+      <th>Zip code</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Country</th>
+      <th>Phone number</th>
+      <th>Amazon email</th>
+      <th>Amazon password</th>
+      <th>User</th>
+      <th>Condition</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @deliveries.each do |delivery| %>
+      <tr>
+        <td><%= delivery.first_name %></td>
+        <td><%= delivery.last_name %></td>
+        <td><%= delivery.address_line1 %></td>
+        <td><%= delivery.address_line2 %></td>
+        <td><%= delivery.zip_code %></td>
+        <td><%= delivery.city %></td>
+        <td><%= delivery.state %></td>
+        <td><%= delivery.country %></td>
+        <td><%= delivery.phone_number %></td>
+        <td><%= delivery.amazon_email %></td>
+        <td><%= delivery.amazon_password %></td>
+        <td><%= delivery.user %></td>
+        <td><%= delivery.condition %></td>
+        <td><%= link_to 'Show', delivery %></td>
+        <td><%= link_to 'Edit', edit_delivery_path(delivery) %></td>
+        <td><%= link_to 'Destroy', delivery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Delivery', new_delivery_path %>

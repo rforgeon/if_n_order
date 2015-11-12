@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @delivery.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @delivery.last_name %>
+</p>
+
+<p>
+  <strong>Address line1:</strong>
+  <%= @delivery.address_line1 %>
+</p>
+
+<p>
+  <strong>Address line2:</strong>
+  <%= @delivery.address_line2 %>
+</p>
+
+<p>
+  <strong>Zip code:</strong>
+  <%= @delivery.zip_code %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @delivery.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @delivery.state %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @delivery.country %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @delivery.phone_number %>
+</p>
+
+<p>
+  <strong>Amazon email:</strong>
+  <%= @delivery.amazon_email %>
+</p>
+
+<p>
+  <strong>Amazon password:</strong>
+  <%= @delivery.amazon_password %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @delivery.user %>
+</p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @delivery.condition %>
+</p>
+
+<%= link_to 'Edit', edit_delivery_path(@delivery) %> |
+<%= link_to 'Back', deliveries_path %>
